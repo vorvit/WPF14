@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="500">
     <Window.Resources>
+        <local:Converter x:Key="converter"/>
         <DataTemplate x:Key="prodTemplate">
             <Border x:Name="border" BorderBrush="Aqua" Background="LightCoral" BorderThickness="2" Margin="5" Padding="5">
                 <Grid>
@@ -26,7 +27,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="Цена:"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Path=ProdPrice}"/>
                     <TextBlock Grid.Row="2" Grid.Column="1" Text="Категория товара:"/>
-                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Path=ProductCategory}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Path=ProductCategory, Converter={StaticResource converter}}"/>
                 </Grid>
             </Border>
             <DataTemplate.Triggers>
